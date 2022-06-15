@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ajout d'une liste{% endblock %}
+
+{% block body %}
+    <h2>Ajouter une liste</h2>
+    <a href="{{path('app_to_do_list_all')}}">Voir toutes les listes</a>
+    {{form_start(form)}}
+        <div>
+            {{form_label(form.name, 'Nom de la liste')}}
+            {{form_widget(form.name)}}
+        </div>
+        <button type="submit">Ajouter</button>
+    {{form_end(form)}}
+{% endblock %}

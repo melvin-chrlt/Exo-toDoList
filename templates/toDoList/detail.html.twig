@@ -1,0 +1,10 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Une liste{% endblock %}
+
+{% block body %}
+    <a href="{{path('app_to_do_list_add')}}">Ajouter une liste</a>
+    <a href="{{path('app_to_do_list_all')}}">Voir toutes les listes</a>
+    <h2>Liste {{ toDoList.name}}</h2>
+    <p>Nombre de tâches : {{ toDoList.task|length }}</p>
+{% endblock %}

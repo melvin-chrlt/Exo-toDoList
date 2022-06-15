@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Toutes les listes{% endblock %}
+
+{% block body %}
+    <h2>Toutes les listes</h2>
+    <a href="{{path('app_to_do_list_add')}}">Ajouter une liste</a>
+    {% for entity in entities %}
+        <p>Nom : {{ entity.name }}</p>
+        <p>Nombre de tâches : {{ entity.task|length }}</p>
+        <a href="{{ path("app_detail_list", {id:entity.id}) }}">Voir en détail</a>
+        <a href="{{ path('app_to_do_list_edit', {id:entity.id}) }}">Modifier</a>
+        <form action="{{path('app_to_do_list_del', {id:entity.id})}}" method="POST">
+            <input type="hidden" name="_method" value="DELETE">
+            <button type="submit">Supprimer</button>
+        </form>
+    {% endfor %}
+{% endblock %}

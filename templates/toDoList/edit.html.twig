@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modification de la liste{% endblock %}
+
+{% block body %}
+        <h1>Modifier la liste</h1>
+        {{ form_start (form) }}
+            {{ form_widget (form) }}
+            <button type="submit">Modifier</button>
+        {{ form_end (form) }}
+    </section>
+{% endblock %}
